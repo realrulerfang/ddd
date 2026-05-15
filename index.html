@@ -7,12 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
-      
+     
         body {
             font-family: 'Comic Neue', cursive;
             cursor: url('paw.png') 16 16, auto;
         }
-      
+     
         .menu-item {
             display: flex;
             align-items: center;
@@ -26,7 +26,6 @@
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
         }
-
         /* Roadmap — большой */
         .menu-img {
             width: 210px;
@@ -34,7 +33,6 @@
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
         }
-
         /* Token — чуть меньше + сдвиг */
         .token-img {
             width: 175px;
@@ -43,21 +41,20 @@
             animation: subtleShake 0.8s infinite ease-in-out;
             transform: translateX(-15px) translateY(-13px);
         }
-      
+     
         @keyframes subtleShake {
             0%, 100% { transform: translate(0, 0) rotate(-0.6deg); }
             25% { transform: translate(1.5px, 0.8px) rotate(0.7deg); }
             50% { transform: translate(-0.8px, -1.2px) rotate(-0.5deg); }
             75% { transform: translate(-1.4px, 0.6px) rotate(0.6deg); }
         }
-      
+     
         .menu-item:hover .docs-img,
         .menu-item:hover .menu-img,
         .menu-item:hover .token-img {
             animation: none;
             transform: scale(1.08) translateX(-15px) translateY(-13px);
         }
-
         /* Иконка для Roadmap */
         .roadmap-icon {
             position: absolute;
@@ -66,91 +63,4 @@
             width: 32px;
             height: auto;
             opacity: 0;
-            transform: translateY(-50%) translateX(-80px);   
-            transition: all 0.35s ease;
-            z-index: 10;
-        }
-        .menu-item:hover .roadmap-icon {
-            opacity: 1;
-            transform: translateY(-50%) translateX(-80px);
-        }
-
-        /* Иконка для Docs — поднята на 20px вверх */
-        .docs-icon {
-            position: absolute;
-            left: 100%;
-            top: 100%;
-            width: 32px;
-            height: auto;
-            opacity: 0;
-            transform: translateY(-120%) translateX(-160px);   
-            transition: all 0.35s ease;
-            z-index: 10;
-        }
-        .menu-item:hover .docs-icon {
-            opacity: 1;
-            transform: translateY(-120%) translateX(-160px);
-        }
-
-        /* Иконка для Token */
-        .token-icon {
-            position: absolute;
-            left: 100%;
-            top: 100%;
-            width: 32px;
-            height: auto;
-            opacity: 0;
-            transform: translateY(-57px) translateX(-115px);   
-            transition: all 0.35s ease;
-            z-index: 10;
-        }
-        .menu-item:hover .token-icon {
-            opacity: 1;
-            transform: translateY(-57px) translateX(-115px);
-        }
-
-        /* Анимация кота */
-        .big-cat {
-            max-height: 75%;
-            max-width: 75%;
-            object-fit: contain;
-            animation: catLick 4s infinite ease-in-out;
-            transform-origin: bottom center;
-        }
-        @keyframes catLick {
-            0%, 100% { transform: rotate(-3deg) translateY(0); }
-            20% { transform: rotate(2deg) translateY(-8px); }
-            45% { transform: rotate(-4deg) translateY(4px); }
-            70% { transform: rotate(3deg) translateY(-6px); }
-        }
-    </style>
-</head>
-<body class="bg-white min-h-screen overflow-hidden">
-    <div class="flex h-screen">
-      
-        <div class="w-96 bg-white flex flex-col p-8">
-            <div class="mt-20 space-y-8">
-               
-                <a href="#" class="menu-item">
-                    <img src="docs.png" alt="Docs" class="docs-img">
-                    <img src="doki.png" alt="Docs Icon" class="docs-icon">
-                </a>
-              
-                <a href="roadmap.html" class="menu-item">
-                    <img src="roadmap.png" alt="Roadmap" class="menu-img">
-                    <img src="doroga.png" alt="Road" class="roadmap-icon">
-                </a>
-              
-                <a href="#" class="menu-item">
-                    <img src="nad.png" alt="Token" class="token-img">
-                    <img src="token.png" alt="Token Icon" class="token-icon">
-                </a>
-            </div>
-        </div>
-      
-        <div class="flex-1 flex items-end justify-center relative pb-12 pl-8">
-            <img src="cat.png" alt="Cat" class="big-cat">
-        </div>
-    </div>
-</body>
-</html>
+            transform: translateY
