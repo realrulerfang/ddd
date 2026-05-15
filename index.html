@@ -35,9 +35,9 @@
             animation: subtleShake 0.8s infinite ease-in-out;
         }
 
-        /* Token — чуть меньше, чтобы меньше шакалило */
+        /* Token — чуть меньше */
         .token-img {
-            width: 185px;           /* уменьшил размер */
+            width: 175px;           /* стало ещё немного меньше */
             height: auto;
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
@@ -91,7 +91,7 @@
             transform: translateY(-100%) translateX(-160px);
         }
 
-        /* Иконка для Token — низ выровнен по низу nad.png */
+        /* Иконка для Token — выше и сильнее влево */
         .token-icon {
             position: absolute;
             left: 100%;
@@ -99,13 +99,13 @@
             width: 32px;
             height: auto;
             opacity: 0;
-            transform: translateY(-100%) translateX(-80px);   
+            transform: translateY(-115px) translateX(-115px);   
             transition: all 0.35s ease;
             z-index: 10;
         }
         .menu-item:hover .token-icon {
             opacity: 1;
-            transform: translateY(-100%) translateX(-80px);
+            transform: translateY(-115px) translateX(-115px);
         }
 
         /* Анимация кота */
