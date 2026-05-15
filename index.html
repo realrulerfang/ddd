@@ -35,12 +35,13 @@
             animation: subtleShake 0.8s infinite ease-in-out;
         }
 
-        /* Token — чуть меньше */
+        /* Token — чуть меньше + сдвиг */
         .token-img {
             width: 175px;
             height: auto;
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
+            transform: translateX(-5px) translateY(-3px); /* сдвиг левее и выше */
         }
       
         @keyframes subtleShake {
@@ -54,7 +55,7 @@
         .menu-item:hover .menu-img,
         .menu-item:hover .token-img {
             animation: none;
-            transform: scale(1.08);
+            transform: scale(1.08) translateX(-5px) translateY(-3px);
         }
 
         /* Иконка для Roadmap */
@@ -91,7 +92,7 @@
             transform: translateY(-100%) translateX(-160px);
         }
 
-        /* Иконка для Token — низ на 3-5px выше низа nad.png */
+        /* Иконка для Token */
         .token-icon {
             position: absolute;
             left: 100%;
