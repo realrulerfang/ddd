@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat Project - v2</title>
+    <title>Cat Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
@@ -13,44 +13,62 @@
             cursor: url('paw.png') 16 16, auto;
         }
         
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
         .menu-img {
             width: 105px;
             height: auto;
             image-rendering: crisp-edges;
-            animation: subtleShake 2.5s infinite ease-in-out;
+            animation: subtleShake 1.2s infinite ease-in-out; /* Ускорил */
         }
         
+        /* Быстрая и живой дрожь */
         @keyframes subtleShake {
-            0%, 100% { transform: translate(0, 0) rotate(-0.7deg); }
-            25% { transform: translate(2px, 1px) rotate(0.7deg); }
-            50% { transform: translate(0, -1.5px) rotate(-0.5deg); }
-            75% { transform: translate(-2px, 1px) rotate(0.5deg); }
+            0%, 100% { transform: translate(0, 0) rotate(-1deg); }
+            25%      { transform: translate(2px, 1px) rotate(1deg); }
+            50%      { transform: translate(0, -2px) rotate(-0.8deg); }
+            75%      { transform: translate(-2px, 1px) rotate(0.8deg); }
         }
         
         .menu-item:hover .menu-img {
             animation: none;
             transform: scale(1.1);
         }
+        
+        .big-cat {
+            max-height: 75%;
+            max-width: 75%;
+            object-fit: contain;
+        }
     </style>
 </head>
-<body class="bg-white min-h-screen">
+<body class="bg-white min-h-screen overflow-hidden">
     <div class="flex h-screen">
+        
+        <!-- Левая панель -->
         <div class="w-96 bg-white flex flex-col p-8">
-            <div class="mt-20 space-y-12">
+            <div class="mt-20 space-y-16">   <!-- Увеличил расстояние между элементами -->
                 <a href="#" class="menu-item">
                     <img src="docs.png" alt="Docs" class="menu-img">
                 </a>
+                
                 <a href="#" class="menu-item">
                     <img src="roadmap.png" alt="Roadmap" class="menu-img">
                 </a>
+                
                 <a href="#" class="menu-item">
                     <img src="treasury.png" alt="Treasury" class="menu-img">
                 </a>
             </div>
         </div>
         
+        <!-- Кот -->
         <div class="flex-1 flex items-end justify-center relative pb-16 pl-8">
-            <img src="cat.png" alt="Cat" class="max-h-[75%]">
+            <img src="cat.png" alt="Cat" class="big-cat">
         </div>
     </div>
 </body>
