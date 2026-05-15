@@ -19,28 +19,9 @@
             gap: 24px;
             position: relative;
         }
-        /* Docs — меньше */
-        .docs-img {
-            width: 135px;
-            height: auto;
-            image-rendering: crisp-edges;
-            animation: subtleShake 0.8s infinite ease-in-out;
-        }
-        /* Roadmap — большой */
-        .menu-img {
-            width: 210px;
-            height: auto;
-            image-rendering: crisp-edges;
-            animation: subtleShake 0.8s infinite ease-in-out;
-        }
-        /* Token — чуть меньше + сдвиг */
-        .token-img {
-            width: 175px;
-            height: auto;
-            image-rendering: crisp-edges;
-            animation: subtleShake 0.8s infinite ease-in-out;
-            transform: translateX(-15px) translateY(-13px);
-        }
+        .docs-img { width: 135px; height: auto; image-rendering: crisp-edges; animation: subtleShake 0.8s infinite ease-in-out; }
+        .menu-img { width: 210px; height: auto; image-rendering: crisp-edges; animation: subtleShake 0.8s infinite ease-in-out; }
+        .token-img { width: 175px; height: auto; image-rendering: crisp-edges; animation: subtleShake 0.8s infinite ease-in-out; transform: translateX(-15px) translateY(-13px); }
     
         @keyframes subtleShake {
             0%, 100% { transform: translate(0, 0) rotate(-0.6deg); }
@@ -55,55 +36,18 @@
             animation: none;
             transform: scale(1.08) translateX(-15px) translateY(-13px);
         }
-        /* Иконка для Roadmap */
-        .roadmap-icon {
-            position: absolute;
-            left: 100%;
-            top: 50%;
-            width: 32px;
-            height: auto;
-            opacity: 0;
-            transform: translateY(-50%) translateX(-80px);
-            transition: all 0.35s ease;
-            z-index: 10;
+
+        .roadmap-icon, .docs-icon, .token-icon {
+            position: absolute; left: 100%; top: 100%; width: 32px; height: auto; opacity: 0; transition: all 0.35s ease; z-index: 10;
         }
-        .menu-item:hover .roadmap-icon {
-            opacity: 1;
-            transform: translateY(-50%) translateX(-80px);
-        }
-        /* Иконка для Docs */
-        .docs-icon {
-            position: absolute;
-            left: 100%;
-            top: 100%;
-            width: 32px;
-            height: auto;
-            opacity: 0;
-            transform: translateY(-120%) translateX(-160px);
-            transition: all 0.35s ease;
-            z-index: 10;
-        }
-        .menu-item:hover .docs-icon {
-            opacity: 1;
-            transform: translateY(-120%) translateX(-160px);
-        }
-        /* Иконка для Token */
-        .token-icon {
-            position: absolute;
-            left: 100%;
-            top: 100%;
-            width: 32px;
-            height: auto;
-            opacity: 0;
-            transform: translateY(-57px) translateX(-115px);
-            transition: all 0.35s ease;
-            z-index: 10;
-        }
-        .menu-item:hover .token-icon {
-            opacity: 1;
-            transform: translateY(-57px) translateX(-115px);
-        }
-        /* Анимация кота */
+        .roadmap-icon { transform: translateY(-50%) translateX(-80px); }
+        .docs-icon { transform: translateY(-120%) translateX(-160px); }
+        .token-icon { transform: translateY(-57px) translateX(-115px); }
+
+        .menu-item:hover .roadmap-icon,
+        .menu-item:hover .docs-icon,
+        .menu-item:hover .token-icon { opacity: 1; }
+
         .big-cat {
             max-height: 75%;
             max-width: 75%;
@@ -129,11 +73,6 @@
     <div class="flex h-screen">
     
         <div class="w-96 bg-white flex flex-col p-8">
-           
-            <!-- Добавленная картинка-название -->
-            <div class="mb-8 flex justify-center">
-                <img src="besc.png" alt="Brian’s Emotional Support Cat" style="max-width: 320px; height: auto;">
-            </div>
            
             <div class="mt-4 space-y-8">
              
