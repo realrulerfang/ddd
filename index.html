@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian’s Emotional Support Cat</title>
+    <title>Cat Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
-     
+      
         body {
             font-family: 'Comic Neue', cursive;
             cursor: url('paw.png') 16 16, auto;
         }
-     
+      
         .menu-item {
             display: flex;
             align-items: center;
             gap: 24px;
             position: relative;
         }
-
         /* Docs — меньше */
         .docs-img {
             width: 135px;
@@ -27,6 +26,7 @@
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
         }
+
         /* Roadmap — большой */
         .menu-img {
             width: 210px;
@@ -34,6 +34,7 @@
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
         }
+
         /* Token — чуть меньше + сдвиг */
         .token-img {
             width: 175px;
@@ -42,14 +43,14 @@
             animation: subtleShake 0.8s infinite ease-in-out;
             transform: translateX(-15px) translateY(-13px);
         }
-     
+      
         @keyframes subtleShake {
             0%, 100% { transform: translate(0, 0) rotate(-0.6deg); }
             25% { transform: translate(1.5px, 0.8px) rotate(0.7deg); }
             50% { transform: translate(-0.8px, -1.2px) rotate(-0.5deg); }
             75% { transform: translate(-1.4px, 0.6px) rotate(0.6deg); }
         }
-     
+      
         .menu-item:hover .docs-img,
         .menu-item:hover .menu-img,
         .menu-item:hover .token-img {
@@ -57,7 +58,7 @@
             transform: scale(1.08) translateX(-15px) translateY(-13px);
         }
 
-        /* Иконка для Roadmap — как было изначально */
+        /* Иконка для Roadmap */
         .roadmap-icon {
             position: absolute;
             left: 100%;
@@ -65,16 +66,16 @@
             width: 32px;
             height: auto;
             opacity: 0;
-            transform: translateY(-60%) translateX(-80px);
+            transform: translateY(-50%) translateX(-80px);   
             transition: all 0.35s ease;
             z-index: 10;
         }
         .menu-item:hover .roadmap-icon {
             opacity: 1;
-            transform: translateY(-60%) translateX(-80px);
+            transform: translateY(-50%) translateX(-80px);
         }
 
-        /* Иконка для Docs — как было */
+        /* Иконка для Docs — поднята на 20px вверх */
         .docs-icon {
             position: absolute;
             left: 100%;
@@ -82,16 +83,16 @@
             width: 32px;
             height: auto;
             opacity: 0;
-            transform: translateY(-145px) translateX(-160px);
+            transform: translateY(-120%) translateX(-160px);   
             transition: all 0.35s ease;
             z-index: 10;
         }
         .menu-item:hover .docs-icon {
             opacity: 1;
-            transform: translateY(-145px) translateX(-160px);
+            transform: translateY(-120%) translateX(-160px);
         }
 
-        /* Иконка для Token — как было */
+        /* Иконка для Token */
         .token-icon {
             position: absolute;
             left: 100%;
@@ -99,7 +100,7 @@
             width: 32px;
             height: auto;
             opacity: 0;
-            transform: translateY(-57px) translateX(-115px);
+            transform: translateY(-57px) translateX(-115px);   
             transition: all 0.35s ease;
             z-index: 10;
         }
@@ -122,131 +123,34 @@
             45% { transform: rotate(-4deg) translateY(4px); }
             70% { transform: rotate(3deg) translateY(-6px); }
         }
-
-        /* Docs Content */
-        .docs-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.7;
-        }
-
-        .docs-content h1, .docs-content h2 {
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #222;
-        }
-
-        .docs-content h1 { font-size: 2.8rem; }
-        .docs-content h2 { font-size: 1.8rem; margin-top: 50px; }
-
-        .docs-content p {
-            margin-bottom: 18px;
-            font-size: 1.1rem;
-        }
-
-        .section { margin-bottom: 60px; }
     </style>
 </head>
 <body class="bg-white min-h-screen overflow-hidden">
     <div class="flex h-screen">
-     
-        <!-- Left Menu -->
-        <div class="w-96 bg-white flex flex-col p-8 border-r border-gray-100">
+      
+        <div class="w-96 bg-white flex flex-col p-8">
             <div class="mt-20 space-y-8">
-              
-                <a href="#" onclick="showDocs()" class="menu-item">
+               
+                <a href="#" class="menu-item">
                     <img src="docs.png" alt="Docs" class="docs-img">
                     <img src="doki.png" alt="Docs Icon" class="docs-icon">
                 </a>
-             
+              
                 <a href="roadmap.html" class="menu-item">
                     <img src="roadmap.png" alt="Roadmap" class="menu-img">
                     <img src="doroga.png" alt="Road" class="roadmap-icon">
                 </a>
-             
+              
                 <a href="#" class="menu-item">
                     <img src="nad.png" alt="Token" class="token-img">
                     <img src="token.png" alt="Token Icon" class="token-icon">
                 </a>
             </div>
         </div>
-     
-        <!-- Main Content -->
-        <div class="flex-1 flex items-center justify-center relative overflow-auto" id="main-content">
-            <!-- Cat -->
-            <div id="cat-view">
-                <img src="cat.png" alt="Cat" class="big-cat">
-            </div>
-
-            <!-- Docs -->
-            <div id="docs-view" class="docs-content hidden">
-                <h1 class="text-center mb-12">WHAT IS THIS?</h1>
-                
-                <div class="section">
-                    <p>Brian’s Emotional Support Cat is a mysterious creature living on Base.</p>
-                    <p>Nobody knows where the cat came from.</p>
-                    <p>Some believe it appeared near Coinbase servers during a violent market crash.</p>
-                    <p>Others claim the cat emotionally stabilizes the entire chain during periods of extreme volatility.</p>
-                    <p><strong>The truth no longer matters.</strong></p>
-                    <p><strong>The cat is here now.</strong></p>
-                </div>
-
-                <h2>LORE</h2>
-                <div class="section">
-                    <p>During difficult market conditions Brian needed emotional support.</p>
-                    <p>The cat answered.</p>
-                    <p>Since then transactions on Base have become cheaper, faster and emotionally safer.</p>
-                    <p>Many holders believe the cat quietly protects the network from psychological collapse.</p>
-                    <p>Nobody can prove this.</p>
-                </div>
-
-                <h2>UTILITY</h2>
-                <div class="section">
-                    <p><strong>1. Emotional Support Treasury</strong></p>
-                    <p>A portion of transaction fees is directed into the Emotional Support Treasury.</p>
-                    <p>The treasury helps support:</p>
-                    <ul class="list-disc pl-8 mb-6">
-                        <li>community growth</li>
-                        <li>meme expansion</li>
-                        <li>ecosystem activity</li>
-                        <li>future cat operations across Base</li>
-                    </ul>
-                    <p>The treasury exists to ensure the cat remains emotionally stable.</p>
-
-                    <p class="mt-8"><strong>2. Weekly Community Support Drop</strong></p>
-                    <p>0.5% of weekly collected fees are redistributed to the top 100 strongest community participants and holders.</p>
-                    <p>The more active and committed the holder is within the ecosystem, the higher the chance of receiving weekly support rewards.</p>
-                    <p>The cat appreciates loyalty.</p>
-                    <p>Support drops are distributed weekly through the Emotional Support System.</p>
-                </div>
-
-                <h2>FAQ</h2>
-                <div class="section space-y-4">
-                    <p><strong>Is this financial advice?</strong> No.</p>
-                    <p><strong>Is the cat real?</strong> Emotionally yes.</p>
-                    <p><strong>Why Base?</strong> Cheap gas helps the cat survive.</p>
-                    <p><strong>Who controls the treasury?</strong> The cat.</p>
-                    <p><strong>Is there utility?</strong> The cat is trying its best.</p>
-                    <p><strong>Are weekly support drops guaranteed?</strong> The cat will decide.</p>
-                    <p><strong>What protects the ecosystem?</strong> Emotional support and low transaction fees.</p>
-                </div>
-
-                <div class="mt-16 text-center text-sm text-gray-600 border-t border-gray-200 pt-8">
-                    <p><strong>DISCLAIMER</strong></p>
-                    <p>Brian’s Emotional Support Cat is a meme project created for entertainment, community participation and internet culture purposes.</p>
-                    <p>Nothing on this website should be interpreted as financial advice.</p>
-                    <p>The cat is not officially affiliated with Coinbase, although spiritually connected.</p>
-                </div>
-            </div>
+      
+        <div class="flex-1 flex items-end justify-center relative pb-12 pl-8">
+            <img src="cat.png" alt="Cat" class="big-cat">
         </div>
     </div>
-
-    <script>
-        function showDocs() {
-            document.getElementById('cat-view').classList.add('hidden');
-            document.getElementById('docs-view').classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
