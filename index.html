@@ -26,10 +26,18 @@
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
         }
-       
-        /* Roadmap, Token и Treasury-style — большие */
+
+        /* Roadmap — большой */
         .menu-img {
             width: 210px;
+            height: auto;
+            image-rendering: crisp-edges;
+            animation: subtleShake 0.8s infinite ease-in-out;
+        }
+
+        /* Token — чуть меньше, чтобы меньше шакалило */
+        .token-img {
+            width: 185px;           /* уменьшил размер */
             height: auto;
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
@@ -43,7 +51,8 @@
         }
       
         .menu-item:hover .docs-img,
-        .menu-item:hover .menu-img {
+        .menu-item:hover .menu-img,
+        .menu-item:hover .token-img {
             animation: none;
             transform: scale(1.08);
         }
@@ -82,21 +91,21 @@
             transform: translateY(-100%) translateX(-160px);
         }
 
-        /* Иконка для Token — такой же отступ как у Roadmap */
+        /* Иконка для Token — низ выровнен по низу nad.png */
         .token-icon {
             position: absolute;
             left: 100%;
-            top: 50%;
+            top: 100%;
             width: 32px;
             height: auto;
             opacity: 0;
-            transform: translateY(-50%) translateX(-80px);   
+            transform: translateY(-100%) translateX(-80px);   
             transition: all 0.35s ease;
             z-index: 10;
         }
         .menu-item:hover .token-icon {
             opacity: 1;
-            transform: translateY(-50%) translateX(-80px);
+            transform: translateY(-100%) translateX(-80px);
         }
 
         /* Анимация кота */
@@ -132,7 +141,7 @@
                 </a>
               
                 <a href="#" class="menu-item">
-                    <img src="nad.png" alt="Token" class="menu-img">
+                    <img src="nad.png" alt="Token" class="token-img">
                     <img src="token.png" alt="Token Icon" class="token-icon">
                 </a>
             </div>
