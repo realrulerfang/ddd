@@ -7,26 +7,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
-        
-        body { 
+       
+        body {
             font-family: 'Comic Neue', cursive;
             cursor: url('paw.png') 16 16, auto;
         }
-        
+       
         .menu-item {
             display: flex;
             align-items: center;
             gap: 24px;
+            position: relative;
         }
 
         /* Docs — меньше */
         .docs-img {
-            width: 135px;                    /* Меньше остальных */
+            width: 135px;
             height: auto;
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
         }
-
+        
         /* Roadmap и Treasury — большие */
         .menu-img {
             width: 210px;
@@ -34,19 +35,36 @@
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
         }
-        
-        /* Быстрая и аккуратная дрожь */
+       
+        /* Дрожь */
         @keyframes subtleShake {
             0%, 100% { transform: translate(0, 0) rotate(-0.6deg); }
-            25%      { transform: translate(1.5px, 0.8px) rotate(0.7deg); }
-            50%      { transform: translate(-0.8px, -1.2px) rotate(-0.5deg); }
-            75%      { transform: translate(-1.4px, 0.6px) rotate(0.6deg); }
+            25% { transform: translate(1.5px, 0.8px) rotate(0.7deg); }
+            50% { transform: translate(-0.8px, -1.2px) rotate(-0.5deg); }
+            75% { transform: translate(-1.4px, 0.6px) rotate(0.6deg); }
         }
-        
+       
         .menu-item:hover .docs-img,
         .menu-item:hover .menu-img {
             animation: none;
             transform: scale(1.08);
+        }
+
+        /* Анимация картинки дороги при наведении на Roadmap */
+        .roadmap-icon {
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            width: 90px;
+            opacity: 0;
+            transform: translateY(-50%) translateX(20px);
+            transition: all 0.4s ease;
+            z-index: 10;
+        }
+
+        .menu-item:hover .roadmap-icon {
+            opacity: 1;
+            transform: translateY(-50%) translateX(40px);
         }
 
         /* Анимация кота */
@@ -68,27 +86,29 @@
 </head>
 <body class="bg-white min-h-screen overflow-hidden">
     <div class="flex h-screen">
-        
+       
         <!-- Левая панель -->
         <div class="w-96 bg-white flex flex-col p-8">
             <div class="mt-20 space-y-8">
-                <!-- Docs (меньше) -->
+                
+                <!-- Docs -->
                 <a href="#" class="menu-item">
                     <img src="docs.png" alt="Docs" class="docs-img">
                 </a>
-                
-                <!-- Roadmap -->
+               
+                <!-- Roadmap с иконкой -->
                 <a href="#" class="menu-item">
                     <img src="roadmap.png" alt="Roadmap" class="menu-img">
+                    <img src="doroga.png" alt="Road" class="roadmap-icon">
                 </a>
-                
+               
                 <!-- Treasury -->
                 <a href="#" class="menu-item">
                     <img src="treasury.png" alt="Treasury" class="menu-img">
                 </a>
             </div>
         </div>
-        
+       
         <!-- Кот -->
         <div class="flex-1 flex items-end justify-center relative pb-12 pl-8">
             <img src="cat.png" alt="Cat" class="big-cat">
