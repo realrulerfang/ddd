@@ -48,7 +48,7 @@
             transform: scale(1.08);
         }
 
-        /* Иконка дороги — очень маленькая и ближе к надписи */
+        /* Иконка для Roadmap */
         .roadmap-icon {
             position: absolute;
             left: 100%;
@@ -61,6 +61,23 @@
             z-index: 10;
         }
         .menu-item:hover .roadmap-icon {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-80px);
+        }
+
+        /* Иконка для Docs — точно такие же параметры */
+        .docs-icon {
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            width: 32px;
+            height: auto;
+            opacity: 0;
+            transform: translateY(-50%) translateX(-80px);   
+            transition: all 0.35s ease;
+            z-index: 10;
+        }
+        .menu-item:hover .docs-icon {
             opacity: 1;
             transform: translateY(-50%) translateX(-80px);
         }
@@ -89,6 +106,7 @@
                
                 <a href="#" class="menu-item">
                     <img src="docs.png" alt="Docs" class="docs-img">
+                    <img src="doki.png" alt="Docs Icon" class="docs-icon">
                 </a>
               
                 <a href="#" class="menu-item">
