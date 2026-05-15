@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat Project</title>
+    <title>Brian’s Emotional Support Cat</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
@@ -20,11 +20,25 @@
             position: relative;
         }
 
-        /* Images */
-        .docs-img { width: 135px; height: auto; image-rendering: crisp-edges; animation: subtleShake 0.8s infinite ease-in-out; }
-        .menu-img { width: 210px; height: auto; image-rendering: crisp-edges; animation: subtleShake 0.8s infinite ease-in-out; }
-        .token-img { 
-            width: 175px; height: auto; image-rendering: crisp-edges; 
+        /* Docs — меньше */
+        .docs-img {
+            width: 135px;
+            height: auto;
+            image-rendering: crisp-edges;
+            animation: subtleShake 0.8s infinite ease-in-out;
+        }
+        /* Roadmap — большой */
+        .menu-img {
+            width: 210px;
+            height: auto;
+            image-rendering: crisp-edges;
+            animation: subtleShake 0.8s infinite ease-in-out;
+        }
+        /* Token — чуть меньше + сдвиг */
+        .token-img {
+            width: 175px;
+            height: auto;
+            image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
             transform: translateX(-15px) translateY(-13px);
         }
@@ -43,29 +57,58 @@
             transform: scale(1.08) translateX(-15px) translateY(-13px);
         }
 
-        /* Hover Icons */
-        .roadmap-icon, .docs-icon, .token-icon {
+        /* Иконка для Roadmap — как было изначально */
+        .roadmap-icon {
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            width: 32px;
+            height: auto;
+            opacity: 0;
+            transform: translateY(-60%) translateX(-80px);
+            transition: all 0.35s ease;
+            z-index: 10;
+        }
+        .menu-item:hover .roadmap-icon {
+            opacity: 1;
+            transform: translateY(-60%) translateX(-80px);
+        }
+
+        /* Иконка для Docs — как было */
+        .docs-icon {
             position: absolute;
             left: 100%;
             top: 100%;
             width: 32px;
             height: auto;
             opacity: 0;
+            transform: translateY(-145px) translateX(-160px);
             transition: all 0.35s ease;
             z-index: 10;
         }
-
-        .roadmap-icon { transform: translateY(-92px) translateX(-72px); }
-        .docs-icon   { transform: translateY(-145px) translateX(-160px); }
-        .token-icon  { transform: translateY(-57px) translateX(-115px); }
-
-        .menu-item:hover .roadmap-icon,
-        .menu-item:hover .docs-icon,
-        .menu-item:hover .token-icon {
+        .menu-item:hover .docs-icon {
             opacity: 1;
+            transform: translateY(-145px) translateX(-160px);
         }
 
-        /* Cat Animation */
+        /* Иконка для Token — как было */
+        .token-icon {
+            position: absolute;
+            left: 100%;
+            top: 100%;
+            width: 32px;
+            height: auto;
+            opacity: 0;
+            transform: translateY(-57px) translateX(-115px);
+            transition: all 0.35s ease;
+            z-index: 10;
+        }
+        .menu-item:hover .token-icon {
+            opacity: 1;
+            transform: translateY(-57px) translateX(-115px);
+        }
+
+        /* Анимация кота */
         .big-cat {
             max-height: 75%;
             max-width: 75%;
@@ -73,7 +116,6 @@
             animation: catLick 4s infinite ease-in-out;
             transform-origin: bottom center;
         }
-
         @keyframes catLick {
             0%, 100% { transform: rotate(-3deg) translateY(0); }
             20% { transform: rotate(2deg) translateY(-8px); }
@@ -103,9 +145,7 @@
             font-size: 1.1rem;
         }
 
-        .section {
-            margin-bottom: 60px;
-        }
+        .section { margin-bottom: 60px; }
     </style>
 </head>
 <body class="bg-white min-h-screen overflow-hidden">
@@ -132,14 +172,14 @@
             </div>
         </div>
      
-        <!-- Main Content Area -->
+        <!-- Main Content -->
         <div class="flex-1 flex items-center justify-center relative overflow-auto" id="main-content">
-            <!-- Cat (default) -->
+            <!-- Cat -->
             <div id="cat-view">
                 <img src="cat.png" alt="Cat" class="big-cat">
             </div>
 
-            <!-- Docs Content -->
+            <!-- Docs -->
             <div id="docs-view" class="docs-content hidden">
                 <h1 class="text-center mb-12">WHAT IS THIS?</h1>
                 
@@ -161,19 +201,9 @@
                     <p>Nobody can prove this.</p>
                 </div>
 
-                <h2>TOKENOMICS</h2>
-                <div class="section">
-                    <p><strong>Total Supply:</strong> 1,000,000,000 BESC</p>
-                    <p><strong>Chain:</strong> Base</p>
-                    <p><strong>Tax:</strong> 3%</p>
-                    <p><strong>Liquidity:</strong> Locked</p>
-                    <p><strong>Contract:</strong> Renounced</p>
-                    <p><strong>Utility:</strong> Emotional support infrastructure</p>
-                </div>
-
                 <h2>UTILITY</h2>
                 <div class="section">
-                    <p><strong>1. Emotional Support</strong></p>
+                    <p><strong>1. Emotional Support Treasury</strong></p>
                     <p>A portion of transaction fees is directed into the Emotional Support Treasury.</p>
                     <p>The treasury helps support:</p>
                     <ul class="list-disc pl-8 mb-6">
@@ -189,15 +219,6 @@
                     <p>The more active and committed the holder is within the ecosystem, the higher the chance of receiving weekly support rewards.</p>
                     <p>The cat appreciates loyalty.</p>
                     <p>Support drops are distributed weekly through the Emotional Support System.</p>
-                </div>
-
-                <h2>ROADMAP</h2>
-                <div class="section">
-                    <p><strong>Phase 1:</strong> the cat appears</p>
-                    <p><strong>Phase 2:</strong> community feeds the cat</p>
-                    <p><strong>Phase 3:</strong> weekly support distribution begins</p>
-                    <p><strong>Phase 4:</strong> emotional stabilization of Base</p>
-                    <p><strong>Phase 5:</strong> global cat expansion</p>
                 </div>
 
                 <h2>FAQ</h2>
