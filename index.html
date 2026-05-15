@@ -14,7 +14,7 @@
         }
         
         .menu-img {
-            width: 105px;
+            width: 210px;                    /* В 2 раза больше */
             height: auto;
             image-rendering: crisp-edges;
             animation: subtleShake 1.2s infinite ease-in-out;
@@ -29,10 +29,10 @@
         
         .menu-item:hover .menu-img {
             animation: none;
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
-        /* Анимация кота — "лижется" */
+        /* Анимация кота */
         .big-cat {
             max-height: 75%;
             max-width: 75%;
@@ -42,18 +42,10 @@
         }
 
         @keyframes catLick {
-            0%, 100% { 
-                transform: rotate(-3deg) translateY(0); 
-            }
-            20% { 
-                transform: rotate(2deg) translateY(-8px); 
-            }
-            45% { 
-                transform: rotate(-4deg) translateY(4px); 
-            }
-            70% { 
-                transform: rotate(3deg) translateY(-6px); 
-            }
+            0%, 100% { transform: rotate(-3deg) translateY(0); }
+            20% { transform: rotate(2deg) translateY(-8px); }
+            45% { transform: rotate(-4deg) translateY(4px); }
+            70% { transform: rotate(3deg) translateY(-6px); }
         }
     </style>
 </head>
@@ -62,7 +54,7 @@
         
         <!-- Левая панель -->
         <div class="w-96 bg-white flex flex-col p-8">
-            <div class="mt-20 space-y-16">
+            <div class="mt-20 space-y-8">     <!-- Расстояние уменьшено в 2 раза -->
                 <a href="#" class="menu-item">
                     <img src="docs.png" alt="Docs" class="menu-img">
                 </a>
