@@ -13,20 +13,13 @@
             cursor: url('paw.png') 16 16, auto;
         }
         
-        .menu-item {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-        
         .menu-img {
             width: 105px;
             height: auto;
             image-rendering: crisp-edges;
-            animation: subtleShake 1.2s infinite ease-in-out; /* Ускорил */
+            animation: subtleShake 1.2s infinite ease-in-out;
         }
         
-        /* Быстрая и живой дрожь */
         @keyframes subtleShake {
             0%, 100% { transform: translate(0, 0) rotate(-1deg); }
             25%      { transform: translate(2px, 1px) rotate(1deg); }
@@ -38,11 +31,29 @@
             animation: none;
             transform: scale(1.1);
         }
-        
+
+        /* Анимация кота — "лижется" */
         .big-cat {
             max-height: 75%;
             max-width: 75%;
             object-fit: contain;
+            animation: catLick 4s infinite ease-in-out;
+            transform-origin: bottom center;
+        }
+
+        @keyframes catLick {
+            0%, 100% { 
+                transform: rotate(-3deg) translateY(0); 
+            }
+            20% { 
+                transform: rotate(2deg) translateY(-8px); 
+            }
+            45% { 
+                transform: rotate(-4deg) translateY(4px); 
+            }
+            70% { 
+                transform: rotate(3deg) translateY(-6px); 
+            }
         }
     </style>
 </head>
@@ -51,7 +62,7 @@
         
         <!-- Левая панель -->
         <div class="w-96 bg-white flex flex-col p-8">
-            <div class="mt-20 space-y-16">   <!-- Увеличил расстояние между элементами -->
+            <div class="mt-20 space-y-16">
                 <a href="#" class="menu-item">
                     <img src="docs.png" alt="Docs" class="menu-img">
                 </a>
@@ -66,8 +77,8 @@
             </div>
         </div>
         
-        <!-- Кот -->
-        <div class="flex-1 flex items-end justify-center relative pb-16 pl-8">
+        <!-- Анимированный кот -->
+        <div class="flex-1 flex items-end justify-center relative pb-12 pl-8">
             <img src="cat.png" alt="Cat" class="big-cat">
         </div>
     </div>
