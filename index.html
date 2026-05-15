@@ -14,111 +14,62 @@
         
         .hand-drawn {
             font-family: 'Comic Neue', cursive;
-            letter-spacing: 2px;
         }
         
-        .cat {
-            transition: transform 0.4s ease;
-        }
-        
-        .cat:hover {
-            transform: scale(1.08) rotate(5deg);
-        }
-        
-        .nav-item {
+        .menu-item {
             transition: all 0.3s ease;
         }
         
-        .nav-item:hover {
-            transform: translateX(15px);
-            color: #000;
+        .menu-item:hover {
+            transform: translateX(20px);
         }
     </style>
 </head>
 <body class="bg-white min-h-screen overflow-hidden">
     <div class="flex h-screen">
+        
         <!-- Левая панель -->
-        <div class="w-80 bg-white border-r-4 border-black flex flex-col p-10">
-            <div class="mt-12">
+        <div class="w-96 bg-white border-r-4 border-black flex flex-col p-8">
+            <div class="mt-10">
                 <h1 onclick="window.location.reload()" 
-                    class="text-5xl font-bold hand-drawn cursor-pointer hover:text-gray-600">
+                    class="text-6xl font-bold hand-drawn cursor-pointer hover:text-gray-600">
                     CAT
                 </h1>
             </div>
             
-            <div class="mt-20 space-y-8 text-4xl font-bold hand-drawn">
-                <a href="#" onclick="alert('Документация скоро будет :)')" 
-                   class="nav-item block text-black hover:text-gray-700">Docs</a>
-                <a href="#" onclick="alert('Дорожная карта в разработке...')" 
-                   class="nav-item block text-black hover:text-gray-700">Roadmap</a>
-                <a href="#" onclick="alert('Сокровищница открыта! 🪙')" 
-                   class="nav-item block text-black hover:text-gray-700">Treasury</a>
+            <div class="mt-20 space-y-14">
+                <!-- Docs -->
+                <a href="#" onclick="alert('Открываем Docs... 📖')" class="menu-item flex items-center gap-6 group">
+                    <img src="docs.png" alt="Docs" class="w-36 h-auto transition-transform group-hover:scale-110">
+                </a>
+                
+                <!-- Roadmap -->
+                <a href="#" onclick="alert('Roadmap... 🗺️')" class="menu-item flex items-center gap-6 group">
+                    <img src="roadmap.png" alt="Roadmap" class="w-36 h-auto transition-transform group-hover:scale-110">
+                </a>
+                
+                <!-- Treasury -->
+                <a href="#" onclick="alert('Treasury... 🪙')" class="menu-item flex items-center gap-6 group">
+                    <img src="treasury.png" alt="Treasury" class="w-36 h-auto transition-transform group-hover:scale-110">
+                </a>
             </div>
             
-            <div class="mt-auto mb-8">
-                <div class="border-4 border-black p-4 text-center text-xl font-bold">
+            <div class="mt-auto mb-6">
+                <div class="border-4 border-black p-4 text-center text-xl font-bold hand-drawn">
                     v0.1
                 </div>
             </div>
         </div>
         
-        <!-- Правая часть с котом -->
+        <!-- Правая часть с большим котом -->
         <div class="flex-1 flex items-center justify-center relative">
-            <!-- Кот -->
-            <div class="cat relative">
-                <svg width="420" height="380" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Тело -->
-                    <ellipse cx="280" cy="240" rx="85" ry="110" fill="#FFF" stroke="#111" stroke-width="12"/>
-                    <!-- Голова -->
-                    <circle cx="280" cy="130" r="85" fill="#FFF" stroke="#111" stroke-width="12"/>
-                    <!-- Уши -->
-                    <polygon points="220,80 245,40 280,85" fill="#FFF" stroke="#111" stroke-width="12"/>
-                    <polygon points="340,80 315,40 280,85" fill="#FFF" stroke="#111" stroke-width="12"/>
-                    <!-- Глаза -->
-                    <ellipse cx="240" cy="120" rx="18" ry="28" fill="#111"/>
-                    <ellipse cx="320" cy="120" rx="18" ry="28" fill="#111"/>
-                    <circle cx="245" cy="115" r="8" fill="#FFF"/>
-                    <circle cx="325" cy="115" r="8" fill="#FFF"/>
-                    <!-- Рот -->
-                    <path d="M280 165 Q265 175 255 165" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>
-                    <!-- Нос -->
-                    <ellipse cx="280" cy="155" rx="8" ry="6" fill="#111"/>
-                    <!-- Руки -->
-                    <path d="M210 240 Q180 280 175 320" fill="none" stroke="#111" stroke-width="18" stroke-linecap="round"/>
-                    <path d="M350 240 Q380 270 385 310" fill="none" stroke="#111" stroke-width="18" stroke-linecap="round"/>
-                    <!-- Ноги -->
-                    <ellipse cx="240" cy="330" rx="22" ry="35" fill="#FFF" stroke="#111" stroke-width="12"/>
-                    <ellipse cx="320" cy="330" rx="22" ry="35" fill="#FFF" stroke="#111" stroke-width="12"/>
-                </svg>
-            </div>
+            <img src="cat.png" alt="Cat" 
+                 class="max-h-[85%] max-w-[85%] object-contain drop-shadow-2xl">
             
-            <!-- Еда/сокровище -->
-            <div class="absolute bottom-32 left-1/2 -translate-x-12">
-                <div class="relative">
-                    <svg width="90" height="45" viewBox="0 0 90 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="15" y="15" width="60" height="12" rx="6" fill="#FBBF24" stroke="#111" stroke-width="6"/>
-                        <path d="M20 20 Q30 8 45 15 Q60 8 70 20" fill="#F59E0B" stroke="#111" stroke-width="4"/>
-                    </svg>
-                    <p class="text-xs font-bold text-center mt-1">TREATS</p>
-                </div>
-            </div>
-            
-            <!-- Заголовок в центре -->
+            <!-- Надпись сверху -->
             <div class="absolute top-12 right-12 text-right">
                 <h2 class="text-6xl font-bold hand-drawn leading-none">Hello, I'm</h2>
                 <h2 class="text-6xl font-bold hand-drawn text-orange-500 leading-none">Cat!</h2>
-            </div>
-            
-            <!-- Нижняя панель -->
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-6 text-sm">
-                <button onclick="alert('Подключаемся... 🐱')" 
-                        class="px-8 py-4 border-4 border-black font-bold hover:bg-black hover:text-white transition-colors">
-                    Connect Wallet
-                </button>
-                <button onclick="alert('Добро пожаловать в проект!')" 
-                        class="px-8 py-4 border-4 border-black font-bold hover:bg-black hover:text-white transition-colors">
-                    Join Community
-                </button>
             </div>
         </div>
     </div>
