@@ -18,28 +18,25 @@
             display: flex;
             align-items: center;
             gap: 24px;
-            transition: transform 0.2s ease;
         }
         
         .menu-img {
             width: 105px;
             height: auto;
             image-rendering: crisp-edges;
-            animation: subtleShake 3s infinite ease-in-out;
+            animation: subtleShake 2.8s infinite ease-in-out;
         }
         
-        /* Лёгкая дрожь */
         @keyframes subtleShake {
-            0%, 100% { transform: translate(0, 0) rotate(-1deg); }
-            25%      { transform: translate(2px, 1px) rotate(1deg); }
-            50%      { transform: translate(0, -1px) rotate(-0.5deg); }
-            75%      { transform: translate(-2px, 1px) rotate(0.5deg); }
+            0%, 100% { transform: translate(0, 0) rotate(-0.8deg); }
+            25%      { transform: translate(1.5px, 0.5px) rotate(0.8deg); }
+            50%      { transform: translate(0, -1px) rotate(-0.4deg); }
+            75%      { transform: translate(-1.5px, 0.5px) rotate(0.6deg); }
         }
         
-        /* При наведении */
         .menu-item:hover .menu-img {
-            animation: none;                    /* Останавливаем дрожь */
-            transform: scale(1.08);             /* Чуть увеличиваем */
+            animation: none;
+            transform: scale(1.09);
         }
         
         .big-cat {
@@ -55,7 +52,6 @@
         <!-- Левая панель -->
         <div class="w-96 bg-white flex flex-col p-8">
             <div class="mt-20 space-y-12">
-                
                 <a href="#" class="menu-item group">
                     <img src="docs.png" alt="Docs" class="menu-img">
                 </a>
