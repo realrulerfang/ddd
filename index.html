@@ -11,6 +11,7 @@
         body { 
             font-family: 'Comic Neue', cursive;
             cursor: url('paw.png') 16 16, auto;
+            overflow: hidden;
         }
         
         .menu-img {
@@ -24,12 +25,31 @@
             max-width: 75%;
             object-fit: contain;
         }
+
+        /* Эффект следа лапки при клике */
+        .paw-print {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('paw332.png') no-repeat center/contain;
+            pointer-events: none;
+            opacity: 0.9;
+            z-index: 9999;
+            animation: pawFade 1.2s forwards;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes pawFade {
+            0% { opacity: 0.9; transform: translate(-50%, -50%) scale(0.6); }
+            20% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1.3); }
+        }
     </style>
 </head>
-<body class="bg-white min-h-screen overflow-hidden">
+<body class="bg-white min-h-screen">
     <div class="flex h-screen">
         
-        <!-- Левая панель (без CAT и без линии) -->
+        <!-- Левая панель -->
         <div class="w-96 bg-white flex flex-col p-8">
             <div class="mt-20 space-y-12">
                 <a href="#" class="flex items-center gap-6 group">
@@ -51,5 +71,20 @@
             <img src="cat.png" alt="Cat" class="big-cat">
         </div>
     </div>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const paw = document.createElement('div');
+            paw.className = 'paw-print';
+            paw.style.left = e.clientX + 'px';
+            paw.style.top = e.clientY + 'px';
+            document.body.appendChild(paw);
+
+            // Удаляем элемент после анимации
+            setTimeout(() => {
+                paw.remove();
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
