@@ -27,7 +27,7 @@
             animation: subtleShake 0.8s infinite ease-in-out;
         }
        
-        /* Roadmap и Treasury — большие */
+        /* Roadmap, Token и Treasury-style — большие */
         .menu-img {
             width: 210px;
             height: auto;
@@ -65,11 +65,11 @@
             transform: translateY(-50%) translateX(-80px);
         }
 
-        /* Иконка для Docs — низ выровнен по низу docs.png */
+        /* Иконка для Docs */
         .docs-icon {
             position: absolute;
             left: 100%;
-            top: 100%;                    /* привязано к низу */
+            top: 100%;
             width: 32px;
             height: auto;
             opacity: 0;
@@ -80,6 +80,23 @@
         .menu-item:hover .docs-icon {
             opacity: 1;
             transform: translateY(-100%) translateX(-160px);
+        }
+
+        /* Иконка для Token — такой же отступ как у Roadmap */
+        .token-icon {
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            width: 32px;
+            height: auto;
+            opacity: 0;
+            transform: translateY(-50%) translateX(-80px);   
+            transition: all 0.35s ease;
+            z-index: 10;
+        }
+        .menu-item:hover .token-icon {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-80px);
         }
 
         /* Анимация кота */
@@ -115,7 +132,8 @@
                 </a>
               
                 <a href="#" class="menu-item">
-                    <img src="treasury.png" alt="Treasury" class="menu-img">
+                    <img src="nad.png" alt="Token" class="menu-img">
+                    <img src="token.png" alt="Token Icon" class="token-icon">
                 </a>
             </div>
         </div>
