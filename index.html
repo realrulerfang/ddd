@@ -48,21 +48,21 @@
             transform: scale(1.08);
         }
 
-        /* Иконка дороги — ПРЯМО ВПЛОТНУЮ */
+        /* Иконка дороги — почти в упор + в 2 раза больше */
         .roadmap-icon {
             position: absolute;
             left: 100%;
             top: 50%;
-            width: 65px;
+            width: 130px;           /* было 65px → теперь в 2 раза больше */
             height: auto;
             opacity: 0;
-            transform: translateY(-50%) translateX(-25px);   /* сдвиг влево */
+            transform: translateY(-50%) translateX(-50px);   /* сдвинуто сильнее */
             transition: all 0.35s ease;
             z-index: 10;
         }
         .menu-item:hover .roadmap-icon {
             opacity: 1;
-            transform: translateY(-50%) translateX(-25px);
+            transform: translateY(-50%) translateX(-50px);
         }
 
         /* Анимация кота */
