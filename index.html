@@ -7,12 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
-     
+    
         body {
             font-family: 'Comic Neue', cursive;
             cursor: url('paw.png') 16 16, auto;
         }
-     
+    
         .menu-item {
             display: flex;
             align-items: center;
@@ -41,14 +41,14 @@
             animation: subtleShake 0.8s infinite ease-in-out;
             transform: translateX(-15px) translateY(-13px);
         }
-     
+    
         @keyframes subtleShake {
             0%, 100% { transform: translate(0, 0) rotate(-0.6deg); }
             25% { transform: translate(1.5px, 0.8px) rotate(0.7deg); }
             50% { transform: translate(-0.8px, -1.2px) rotate(-0.5deg); }
             75% { transform: translate(-1.4px, 0.6px) rotate(0.6deg); }
         }
-     
+    
         .menu-item:hover .docs-img,
         .menu-item:hover .menu-img,
         .menu-item:hover .token-img {
@@ -120,34 +120,35 @@
     </style>
 </head>
 <body class="bg-white min-h-screen overflow-hidden">
+
+    <!-- Логотип в центре сверху - увеличен в 2 раза -->
+    <div class="flex justify-center pt-6 pb-4">
+        <img src="besc.png" alt="Brian’s Emotional Support Cat" style="max-width: 640px; height: auto;">
+    </div>
+
     <div class="flex h-screen">
-     
+    
         <div class="w-96 bg-white flex flex-col p-8">
-            
-            <!-- Добавленная картинка-название -->
-            <div class="mb-8 flex justify-center">
-                <img src="besc.png" alt="Brian’s Emotional Support Cat" style="max-width: 320px; height: auto;">
-            </div>
-            
+           
             <div class="mt-4 space-y-8">
-              
+             
                 <a href="docs.html" class="menu-item">
                     <img src="docs.png" alt="Docs" class="docs-img">
                     <img src="doki.png" alt="Docs Icon" class="docs-icon">
                 </a>
-             
+            
                 <a href="roadmap.html" class="menu-item">
                     <img src="roadmap.png" alt="Roadmap" class="menu-img">
                     <img src="doroga.png" alt="Road" class="roadmap-icon">
                 </a>
-             
+            
                 <a href="#" class="menu-item">
                     <img src="nad.png" alt="Token" class="token-img">
                     <img src="token.png" alt="Token Icon" class="token-icon">
                 </a>
             </div>
         </div>
-     
+    
         <div class="flex-1 flex items-end justify-center relative pb-12 pl-8">
             <img src="cat.png" alt="Cat" class="big-cat">
         </div>
