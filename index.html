@@ -10,18 +10,18 @@
         
         body { 
             font-family: 'Comic Neue', cursive;
-            cursor: url('paw.png') 16 16, auto; /* Курсор-лапка */
+            cursor: url('paw.png') 16 16, auto;
         }
         
         .menu-img {
-            width: 110px;           /* Docs стала меньше */
+            width: 105px;
             height: auto;
             image-rendering: crisp-edges;
         }
         
         .big-cat {
-            max-height: 78%;
-            max-width: 78%;
+            max-height: 75%;
+            max-width: 75%;
             object-fit: contain;
         }
     </style>
@@ -29,12 +29,8 @@
 <body class="bg-white min-h-screen overflow-hidden">
     <div class="flex h-screen">
         
-        <!-- Левая панель -->
-        <div class="w-96 bg-white border-r-4 border-black flex flex-col p-8">
-            <div class="mt-10">
-                <h1 class="text-6xl font-bold">CAT</h1>
-            </div>
-            
+        <!-- Левая панель (без CAT и без линии) -->
+        <div class="w-96 bg-white flex flex-col p-8">
             <div class="mt-20 space-y-12">
                 <a href="#" class="flex items-center gap-6 group">
                     <img src="docs.png" alt="Docs" class="menu-img">
@@ -51,7 +47,7 @@
         </div>
         
         <!-- Правая часть с котом -->
-        <div class="flex-1 flex items-end justify-center relative pb-12">
+        <div class="flex-1 flex items-end justify-center relative pb-16 pl-8">
             <img src="cat.png" alt="Cat" class="big-cat">
         </div>
     </div>
