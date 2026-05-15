@@ -48,7 +48,7 @@
             transform: scale(1.08);
         }
 
-        /* Иконка дороги — вплотную */
+        /* Иконка дороги — ПРЯМО ВПЛОТНУЮ */
         .roadmap-icon {
             position: absolute;
             left: 100%;
@@ -56,13 +56,13 @@
             width: 65px;
             height: auto;
             opacity: 0;
-            transform: translateY(-50%) translateX(0px);
+            transform: translateY(-50%) translateX(-25px);   /* сдвиг влево */
             transition: all 0.35s ease;
             z-index: 10;
         }
         .menu-item:hover .roadmap-icon {
             opacity: 1;
-            transform: translateY(-50%) translateX(0px);
+            transform: translateY(-50%) translateX(-25px);
         }
 
         /* Анимация кота */
