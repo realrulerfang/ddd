@@ -19,10 +19,27 @@
             gap: 24px;
             position: relative;
         }
-        .docs-img { width: 135px; height: auto; image-rendering: crisp-edges; animation: subtleShake 0.8s infinite ease-in-out; }
-        .menu-img { width: 210px; height: auto; image-rendering: crisp-edges; animation: subtleShake 0.8s infinite ease-in-out; }
-        .token-img { 
-            width: 175px; height: auto; image-rendering: crisp-edges; 
+        /* Docs — меньше */
+        .docs-img {
+            width: 135px;
+            height: auto;
+            image-rendering: crisp-edges;
+            animation: subtleShake 0.8s infinite ease-in-out;
+        }
+
+        /* Roadmap — большой */
+        .menu-img {
+            width: 210px;
+            height: auto;
+            image-rendering: crisp-edges;
+            animation: subtleShake 0.8s infinite ease-in-out;
+        }
+
+        /* Token — чуть меньше + сдвиг */
+        .token-img {
+            width: 175px;
+            height: auto;
+            image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
             transform: translateX(-15px) translateY(-13px);
         }
@@ -41,37 +58,85 @@
             transform: scale(1.08) translateX(-15px) translateY(-13px);
         }
 
-        /* Иконки (оставил как было) */
-        .roadmap-icon, .docs-icon, .token-icon {
+        /* Иконка для Roadmap */
+        .roadmap-icon {
             position: absolute;
             left: 100%;
+            top: 50%;
             width: 32px;
             height: auto;
             opacity: 0;
+            transform: translateY(-50%) translateX(-80px);   
             transition: all 0.35s ease;
             z-index: 10;
         }
-        .menu-item:hover .roadmap-icon,
-        .menu-item:hover .docs-icon,
-        .menu-item:hover .token-icon {
+        .menu-item:hover .roadmap-icon {
             opacity: 1;
+            transform: translateY(-50%) translateX(-80px);
         }
 
-        .roadmap-icon { top: 50%; transform: translateY(-50%) translateX(-80px); }
-        .docs-icon { top: 100%; transform: translateY(-100%) translateX(-160px); }
-        .token-icon { top: 100%; transform: translateY(-42px) translateX(-115px); }
+        /* Иконка для Docs */
+        .docs-icon {
+            position: absolute;
+            left: 100%;
+            top: 100%;
+            width: 32px;
+            height: auto;
+            opacity: 0;
+            transform: translateY(-100%) translateX(-160px);   
+            transition: all 0.35s ease;
+            z-index: 10;
+        }
+        .menu-item:hover .docs-icon {
+            opacity: 1;
+            transform: translateY(-100%) translateX(-160px);
+        }
+
+        /* Иконка для Token — поднята ещё на 5px выше */
+        .token-icon {
+            position: absolute;
+            left: 100%;
+            top: 100%;
+            width: 32px;
+            height: auto;
+            opacity: 0;
+            transform: translateY(-47px) translateX(-115px);   
+            transition: all 0.35s ease;
+            z-index: 10;
+        }
+        .menu-item:hover .token-icon {
+            opacity: 1;
+            transform: translateY(-47px) translateX(-115px);
+        }
+
+        /* Анимация кота */
+        .big-cat {
+            max-height: 75%;
+            max-width: 75%;
+            object-fit: contain;
+            animation: catLick 4s infinite ease-in-out;
+            transform-origin: bottom center;
+        }
+        @keyframes catLick {
+            0%, 100% { transform: rotate(-3deg) translateY(0); }
+            20% { transform: rotate(2deg) translateY(-8px); }
+            45% { transform: rotate(-4deg) translateY(4px); }
+            70% { transform: rotate(3deg) translateY(-6px); }
+        }
     </style>
 </head>
 <body class="bg-white min-h-screen overflow-hidden">
     <div class="flex h-screen">
+      
         <div class="w-96 bg-white flex flex-col p-8">
             <div class="mt-20 space-y-8">
+               
                 <a href="#" class="menu-item">
                     <img src="docs.png" alt="Docs" class="docs-img">
                     <img src="doki.png" alt="Docs Icon" class="docs-icon">
                 </a>
               
-                <a href="roadmap.html" class="menu-item">   <!-- ← Изменено -->
+                <a href="roadmap.html" class="menu-item">
                     <img src="roadmap.png" alt="Roadmap" class="menu-img">
                     <img src="doroga.png" alt="Road" class="roadmap-icon">
                 </a>
