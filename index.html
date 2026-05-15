@@ -13,57 +13,56 @@
             cursor: url('paw.png') 16 16, auto;
         }
         
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        /* Docs — меньше */
+        .docs-img {
+            width: 135px;                    /* Меньше остальных */
+            height: auto;
+            image-rendering: crisp-edges;
+            animation: subtleShake 0.8s infinite ease-in-out;
+        }
+
+        /* Roadmap и Treasury — большие */
         .menu-img {
-            width: 135px;
+            width: 210px;
             height: auto;
             image-rendering: crisp-edges;
             animation: subtleShake 0.8s infinite ease-in-out;
         }
         
+        /* Быстрая и аккуратная дрожь */
+        @keyframes subtleShake {
+            0%, 100% { transform: translate(0, 0) rotate(-0.6deg); }
+            25%      { transform: translate(1.5px, 0.8px) rotate(0.7deg); }
+            50%      { transform: translate(-0.8px, -1.2px) rotate(-0.5deg); }
+            75%      { transform: translate(-1.4px, 0.6px) rotate(0.6deg); }
+        }
+        
+        .menu-item:hover .docs-img,
         .menu-item:hover .menu-img {
             animation: none;
             transform: scale(1.08);
         }
 
-        /* === АНИМАЦИЯ КОТА ИГРАЕТ С КЛУБКОМ === */
-        .cat-container {
-            position: relative;
-            display: inline-block;
-        }
-
+        /* Анимация кота */
         .big-cat {
-            max-height: 72%;
-            max-width: 72%;
+            max-height: 75%;
+            max-width: 75%;
             object-fit: contain;
-            animation: catPlay 3.5s infinite ease-in-out;
+            animation: catLick 4s infinite ease-in-out;
             transform-origin: bottom center;
         }
 
-        .yarn {
-            position: absolute;
-            bottom: 28%;
-            left: 42%;
-            width: 45px;
-            height: 45px;
-            background: radial-gradient(circle, #f97316 20%, #ea580c 60%, #c2410c);
-            border-radius: 50%;
-            border: 4px solid #111;
-            animation: yarnRoll 3.5s infinite ease-in-out;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        @keyframes catPlay {
-            0%, 100% { transform: rotate(-6deg) translateY(0); }
-            25%      { transform: rotate(8deg) translateY(-15px); }
-            50%      { transform: rotate(-4deg) translateY(8px); }
-            75%      { transform: rotate(7deg) translateY(-12px); }
-        }
-
-        @keyframes yarnRoll {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25%      { transform: translate(35px, -8px) rotate(180deg); }
-            50%      { transform: translate(8px, 15px) rotate(360deg); }
-            75%      { transform: translate(-25px, -10px) rotate(540deg); }
+        @keyframes catLick {
+            0%, 100% { transform: rotate(-3deg) translateY(0); }
+            20% { transform: rotate(2deg) translateY(-8px); }
+            45% { transform: rotate(-4deg) translateY(4px); }
+            70% { transform: rotate(3deg) translateY(-6px); }
         }
     </style>
 </head>
@@ -73,24 +72,26 @@
         <!-- Левая панель -->
         <div class="w-96 bg-white flex flex-col p-8">
             <div class="mt-20 space-y-8">
+                <!-- Docs (меньше) -->
                 <a href="#" class="menu-item">
-                    <img src="docs.png" alt="Docs" class="menu-img">
+                    <img src="docs.png" alt="Docs" class="docs-img">
                 </a>
+                
+                <!-- Roadmap -->
                 <a href="#" class="menu-item">
                     <img src="roadmap.png" alt="Roadmap" class="menu-img">
                 </a>
+                
+                <!-- Treasury -->
                 <a href="#" class="menu-item">
                     <img src="treasury.png" alt="Treasury" class="menu-img">
                 </a>
             </div>
         </div>
         
-        <!-- Кот с клубком -->
+        <!-- Кот -->
         <div class="flex-1 flex items-end justify-center relative pb-12 pl-8">
-            <div class="cat-container">
-                <img src="cat.png" alt="Cat" class="big-cat">
-                <div class="yarn"></div>
-            </div>
+            <img src="cat.png" alt="Cat" class="big-cat">
         </div>
     </div>
 </body>
