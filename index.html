@@ -48,21 +48,21 @@
             transform: scale(1.08);
         }
 
-        /* Иконка дороги — очень маленькая и почти в упор */
+        /* Иконка дороги — очень маленькая и ближе к надписи */
         .roadmap-icon {
             position: absolute;
             left: 100%;
             top: 50%;
-            width: 32px;           /* в 4 раза меньше предыдущего */
+            width: 32px;
             height: auto;
             opacity: 0;
-            transform: translateY(-50%) translateX(-45px);   
+            transform: translateY(-50%) translateX(-70px);   
             transition: all 0.35s ease;
             z-index: 10;
         }
         .menu-item:hover .roadmap-icon {
             opacity: 1;
-            transform: translateY(-50%) translateX(-45px);
+            transform: translateY(-50%) translateX(-70px);
         }
 
         /* Анимация кота */
