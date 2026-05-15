@@ -8,20 +8,21 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
         
-        body {
+        body { 
             font-family: 'Comic Neue', cursive;
+            cursor: url('paw.png') 16 16, auto; /* Курсор-лапка */
         }
         
-        .hand-drawn {
-            font-family: 'Comic Neue', cursive;
+        .menu-img {
+            width: 110px;           /* Docs стала меньше */
+            height: auto;
+            image-rendering: crisp-edges;
         }
         
-        .menu-item {
-            transition: all 0.3s ease;
-        }
-        
-        .menu-item:hover {
-            transform: translateX(20px);
+        .big-cat {
+            max-height: 78%;
+            max-width: 78%;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -31,46 +32,27 @@
         <!-- Левая панель -->
         <div class="w-96 bg-white border-r-4 border-black flex flex-col p-8">
             <div class="mt-10">
-                <h1 onclick="window.location.reload()" 
-                    class="text-6xl font-bold hand-drawn cursor-pointer hover:text-gray-600">
-                    CAT
-                </h1>
+                <h1 class="text-6xl font-bold">CAT</h1>
             </div>
             
-            <div class="mt-20 space-y-14">
-                <!-- Docs -->
-                <a href="#" onclick="alert('Открываем Docs... 📖')" class="menu-item flex items-center gap-6 group">
-                    <img src="docs.png" alt="Docs" class="w-36 h-auto transition-transform group-hover:scale-110">
+            <div class="mt-20 space-y-12">
+                <a href="#" class="flex items-center gap-6 group">
+                    <img src="docs.png" alt="Docs" class="menu-img">
                 </a>
                 
-                <!-- Roadmap -->
-                <a href="#" onclick="alert('Roadmap... 🗺️')" class="menu-item flex items-center gap-6 group">
-                    <img src="roadmap.png" alt="Roadmap" class="w-36 h-auto transition-transform group-hover:scale-110">
+                <a href="#" class="flex items-center gap-6 group">
+                    <img src="roadmap.png" alt="Roadmap" class="menu-img">
                 </a>
                 
-                <!-- Treasury -->
-                <a href="#" onclick="alert('Treasury... 🪙')" class="menu-item flex items-center gap-6 group">
-                    <img src="treasury.png" alt="Treasury" class="w-36 h-auto transition-transform group-hover:scale-110">
+                <a href="#" class="flex items-center gap-6 group">
+                    <img src="treasury.png" alt="Treasury" class="menu-img">
                 </a>
-            </div>
-            
-            <div class="mt-auto mb-6">
-                <div class="border-4 border-black p-4 text-center text-xl font-bold hand-drawn">
-                    v0.1
-                </div>
             </div>
         </div>
         
-        <!-- Правая часть с большим котом -->
-        <div class="flex-1 flex items-center justify-center relative">
-            <img src="cat.png" alt="Cat" 
-                 class="max-h-[85%] max-w-[85%] object-contain drop-shadow-2xl">
-            
-            <!-- Надпись сверху -->
-            <div class="absolute top-12 right-12 text-right">
-                <h2 class="text-6xl font-bold hand-drawn leading-none">Hello, I'm</h2>
-                <h2 class="text-6xl font-bold hand-drawn text-orange-500 leading-none">Cat!</h2>
-            </div>
+        <!-- Правая часть с котом -->
+        <div class="flex-1 flex items-end justify-center relative pb-12">
+            <img src="cat.png" alt="Cat" class="big-cat">
         </div>
     </div>
 </body>
