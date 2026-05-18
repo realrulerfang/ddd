@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat Project</title>
+    <title>Brian’s Emotional Support Cat</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
@@ -36,22 +36,26 @@
             animation: none;
             transform: scale(1.08) translateX(-15px) translateY(-13px);
         }
+
         .roadmap-icon, .docs-icon, .token-icon {
             position: absolute; left: 100%; top: 100%; width: 32px; height: auto; opacity: 0; transition: all 0.35s ease; z-index: 10;
         }
         .roadmap-icon { transform: translateY(-50%) translateX(-80px); }
         .docs-icon { transform: translateY(-120%) translateX(-160px); }
         .token-icon { transform: translateY(-57px) translateX(-115px); }
+
         .menu-item:hover .roadmap-icon,
         .menu-item:hover .docs-icon,
         .menu-item:hover .token-icon { opacity: 1; }
+
         .big-cat {
-            max-height: 75%;
-            max-width: 75%;
+            max-height: 82%;
+            max-width: 82%;
             object-fit: contain;
             animation: catLick 4s infinite ease-in-out;
             transform-origin: bottom center;
         }
+
         @keyframes catLick {
             0%, 100% { transform: rotate(-3deg) translateY(0); }
             20% { transform: rotate(2deg) translateY(-8px); }
@@ -61,15 +65,15 @@
     </style>
 </head>
 <body class="bg-white min-h-screen overflow-hidden">
-    <!-- besc.png — по центру сверху -->
+    <!-- besc.png -->
     <div class="flex justify-center pt-8 pb-4">
         <img src="besc.png" alt="Brian’s Emotional Support Cat" style="max-width: 640px; height: auto;">
     </div>
 
-    <!-- Адрес токена в центре сверху -->
+    <!-- Адрес токена -->
     <div class="flex justify-center mb-6">
         <div class="bg-white border-4 border-black rounded-3xl px-8 py-4 shadow-xl flex items-center gap-4 text-xl font-bold">
-            <span class="text-black">$CAT</span>
+            <span class="text-black">$BESC</span>
             <span class="font-mono text-lg tracking-wider text-zinc-700 select-all" id="token-address">
                 0xb45362eeb2c2fc6b9e60e7833825d044e7cb4b07
             </span>
@@ -81,6 +85,7 @@
     </div>
 
     <div class="flex h-screen">
+        <!-- Левое меню -->
         <div class="w-96 bg-white flex flex-col p-8">
             <div class="mt-4 space-y-8">
                 <a href="docs.html" class="menu-item">
@@ -100,7 +105,8 @@
             </div>
         </div>
    
-        <div class="flex-1 flex items-end justify-center relative pb-12 pl-8">
+        <!-- Кот по центру -->
+        <div class="flex-1 flex items-center justify-center relative">
             <img src="cat.png" alt="Cat" class="big-cat">
         </div>
     </div>
